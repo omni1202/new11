@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>디지털 시계</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(circle at top, #1f2937 0%, #0b1020 60%, #020617 100%);
+        font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+
+      .clock {
+        padding: 1.5rem 2rem;
+        border-radius: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: rgba(15, 23, 42, 0.72);
+        box-shadow: 0 16px 48px rgba(2, 6, 23, 0.55);
+        font-size: clamp(2rem, 8vw, 5rem);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #e2e8f0;
+        text-shadow: 0 0 16px rgba(56, 189, 248, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <time id="clock" class="clock" aria-live="polite"></time>
+
+    <script>
+      const clock = document.querySelector('#clock');
+
+      function renderClock() {
+        const now = new Date();
+        const timeText = now.toLocaleTimeString('ko-KR', {
+          hour12: false,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        });
+
+        clock.textContent = timeText;
+        clock.dateTime = now.toISOString();
+      }
+
+      renderClock();
+      setInterval(renderClock, 1000);
+    </script>
+  </body>
+</html>
