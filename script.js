@@ -27,10 +27,10 @@ const HOLIDAY_YEARS = {
   ],
   2027: [
     { date: "2027-01-01", name: "신정" },
-    { date: "2027-02-06", name: "설날" },
-    { date: "2027-02-07", name: "설날 연휴" },
+    { date: "2027-02-06", name: "설날 연휴" },
+    { date: "2027-02-07", name: "설날" },
     { date: "2027-02-08", name: "설날 연휴" },
-    { date: "2027-02-09", name: "설날 추가휴일", substitute: true },
+    { date: "2027-02-09", name: "설날 대체공휴일", substitute: true },
     { date: "2027-03-01", name: "삼일절" },
     { date: "2027-05-01", name: "노동절" },
     { date: "2027-05-03", name: "노동절 대체공휴일", substitute: true },
